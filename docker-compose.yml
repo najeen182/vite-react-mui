@@ -1,0 +1,15 @@
+version: "3.0"
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      target: development
+    command: yarn dev
+    env_file:
+      - .env
+    ports:
+      - 5173:5173
+    volumes:
+      - ./:/app
+      - /app/node_modules
